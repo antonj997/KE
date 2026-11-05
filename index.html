@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <title>Kragsta Elektriska — appkoncept</title>
+  <link rel="icon" type="image/svg+xml" href="assets/kragsta-icon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="studio-header">
+    <a class="wordmark" href="#screens" aria-label="Kragsta Elektriska, skärmöversikt"><img class="studio-wordmark" src="assets/kragsta-icon.svg" width="40" height="40" alt="Kragsta Elektriska"><span class="concept-tag">Appkoncept</span></a>
+    <div class="studio-meta">För den lilla firman.<br><span>Mer tid till själva jobbet.</span></div>
+  </header>
+  <main class="studio">
+    <div class="intro">
+      <div><h1>En lugnare arbetsdag.</h1><p>Från första kundkontakt till färdig faktura. Allt i fickan.</p></div>
+      <div class="demo-note"><span></span> Klickbar prototyp · Exempeldata</div>
+    </div>
+    <nav class="studio-tabs" aria-label="Visa koncept">
+      <button data-mode="screens" aria-pressed="true">Skärmöversikt</button>
+      <button data-mode="prototype" aria-pressed="false">Prova appen <span aria-hidden="true">↗</span></button>
+      <button data-mode="flow" aria-pressed="false">Användarflöde</button>
+    </nav>
+    <section id="screens-view" aria-label="Sex skärmförslag"><div class="screen-grid" id="screen-grid"></div></section>
+    <section id="prototype-view" hidden aria-label="Klickbar prototyp">
+      <div class="prototype-layout">
+        <aside class="prototype-guide"><h2>Prova en arbetsdag.</h2><p>Alla steg hänger ihop. Lägg till en kund, skapa ett jobb och låt tid och material bli ett fakturautkast.</p><ol><li>Lägg till en kund</li><li>Planera ett jobb</li><li>Registrera tid och material</li><li>Granska fakturan</li></ol><p class="fine-print">Ändringar finns bara i den här förhandsvisningen. Inga fakturor eller mejl skickas.</p><button class="studio-reset" data-action="reset">Börja om med exempeldata</button></aside>
+        <div id="live-phone"></div>
+        <aside class="prototype-caption"><div class="step-marker" id="step-marker">01 / 06</div><h3 id="live-title">Idag</h3><p id="live-description"></p><div class="screen-jump" id="screen-jump"></div></aside>
+      </div>
+    </section>
+    <section id="flow-view" hidden aria-label="Användarflöde">
+      <div class="flow-intro"><h2>Registrera en gång.<br>Fakturera utan dubbelarbete.</h2><p>Kunden följer med till jobbet. Jobbet samlar underlaget.<br>Fakturan fylls i från det som faktiskt har gjorts.</p></div>
+      <div class="journey">
+        <button class="flow-node" data-screen="customers"><span class="flow-index">1</span><span class="flow-icon" data-icon="users"></span><h3>Lägg till kund</h3><p>Privatperson eller företag.<br>Kontakt och arbetsadress.</p><span class="flow-link">Visa Kunder <span aria-hidden="true">↗</span></span></button>
+        <button class="flow-node" data-screen="planning"><span class="flow-index">2</span><span class="flow-icon" data-icon="calendar"></span><h3>Planera jobbet</h3><p>Välj kund, beskriv arbetet<br>och boka en tid.</p><span class="flow-link">Visa Planering <span aria-hidden="true">↗</span></span></button>
+        <button class="flow-node" data-screen="tracking"><span class="flow-index">3</span><span class="flow-icon" data-icon="clock"></span><h3>Registrera arbetet</h3><p>Starta timern eller lägg till tid.<br>Fyll på material efter hand.</p><span class="flow-link">Visa Tid & material <span aria-hidden="true">↗</span></span></button>
+        <button class="flow-node" data-screen="invoice"><span class="flow-index">4</span><span class="flow-icon" data-icon="invoice"></span><h3>Granska & fakturera</h3><p>Kontrollera rader, moms<br>och eventuellt ROT-avdrag.</p><span class="flow-link">Visa Faktura <span aria-hidden="true">↗</span></span></button>
+      </div>
+      <div class="flow-aftermath"><span class="flow-line"></span><div><span data-icon="send"></span><h3>Skickad</h3><p>Inväntar betalning</p></div><span class="flow-line"></span><div><span data-icon="check"></span><h3>Betald</h3><p>Jobbet kan arkiveras</p></div><span class="flow-line"></span><div class="conditional"><span data-icon="branch"></span><h3>Om ROT används</h3><p>Ansök efter kundens betalning.<br>Följ utbetalningen separat.</p></div></div>
+      <div class="flow-exceptions"><h3>När något behöver uppmärksamhet</h3><div><p><b>Saknas underlag?</b><br>Gå tillbaka till jobbet. Utkastet ligger kvar.</p><p><b>Förfallen faktura?</b><br>Visa den under ”Att ta tag i” på startsidan.</p><p><b>Fler besök behövs?</b><br>Boka nästa besök på samma jobb.</p></div></div>
+    </section>
+    <footer class="studio-footer"><span>Kragsta Elektriska · Alla kunder, jobb och belopp i prototypen är exempel.</span><span>Mobilkoncept · November 2026</span></footer>
+  </main>
+  <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
